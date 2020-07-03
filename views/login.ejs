@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+    <style type="text/css">
+        body > .grid {
+          height: 100%;
+        }
+        .image {
+          margin-top: -100px;
+        }
+        .column {
+          max-width: 450px;
+        }
+      </style>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+  </head>
+  <body>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <h2 class="ui teal image header">
+            <img src="https://i2.wp.com/i.imgur.com/JRSTIux.jpg?resize=816%2C9999&ssl=1" class="image">
+            <div class="content">
+                Log-in to your account
+            </div>
+            </h2>
+            <form class="ui large form" id="login">
+                <div class="ui stacked segment">
+                    <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="E-mail address" id="log-mail">
+                    </div>
+                    </div>
+                    <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password" id="log-pass">
+                    </div>
+                    </div>
+                    <button class="ui fluid large teal submit button" type="submit">Login</button>
+                </div>        
+            </form>
+            <div class="ui error message" id="login-error"></div>
+        </div>
+    </div>
+    <script type="module" src="/actions/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+  </head>
+  <body>
+    <div class="ui centered grid">
+      <div class="ui two column centered row">
+        <div class="centered column">
+          <h1><%= title %></h1>
+          <p>Bienvenido a <%= title %>: Registra usuarios, ve ofertas de empleo según tus gustos </p>
+        </div>
+        <div class="centered column">
+          <form action="/users/" method="POST" class="ui form" id="new_user" >
+            <div class="ui input">
+              <input type="text" name="name" placeholder="Ingrese su nombre" id="new-name">
+            </div>
+            <div class="ui input">
+              <input type="text" name="lastname" placeholder="Ingrese su apellido" id="new-lastname">
+            </div>
+            <div class="ui input">
+              <input type="email" name="email" placeholder="Ingrese su email" id="new-mail">
+            </div>
+            <div class="ui input">
+              <input type="password" name="password" placeholder="Ingrese su contraseña" id="new-pass">
+            </div>
+            <button class="ui button" type="submit">Crear usuario</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="list-users">
+      <div class="ui centered grid">
+        <div class="ui two column centered row">
+          <div class="column">
+            <table class="ui centered table" id="users_table">
+              <thead>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/actions/user.js"></script>
+  </body>
+</html>
